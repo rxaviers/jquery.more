@@ -19,7 +19,8 @@
     trigger: {
       find: "find",
       more: "more"
-    }
+    },
+    destroy_on_end: true
   };
 
   function More( element, options ) {
@@ -48,7 +49,7 @@
     },
 
     _more: function() {
-      if( !this.element.triggerHandler( this.options.trigger.more, arguments ) ) {
+      if( !this.element.triggerHandler( this.options.trigger.more, arguments ) && this.options.destroy_on_end ) {
         this.options.more_el.remove();
         return;
       }
