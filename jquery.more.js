@@ -61,7 +61,7 @@
         self._run.call( self );
       });
       if( this.options.afterbind ) {
-        this.options.afterbind();
+        this.options.afterbind.call( this.element[0] );
       }
     },
 
